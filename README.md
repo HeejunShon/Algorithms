@@ -1,2 +1,2 @@
 # Algorithms
-Algorithm problems in SW Expert Academy
+### Algorithm problems from SW Expert Academy, BAEKJOON and others..
