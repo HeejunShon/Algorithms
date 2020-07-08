@@ -14,7 +14,7 @@ function numIslands(grid: string[][]): number {
       // 값이 1일 경우만 증가
       if (grid[i][j] == "1") {
         numOfIslands++;
-        DFSIterateIsland(grid, i, j);
+        dfsIslands(grid, i, j);
       }
     }
   }
@@ -22,7 +22,7 @@ function numIslands(grid: string[][]): number {
   return numOfIslands;
 }
 
-function DFSIterateIsland(grid: string[][], i: number, j: number) {
+function dfsIslands(grid: string[][], i: number, j: number) {
   // 행렬 밖 벗어나거나, 행렬 값이 1이 아니면 return
   if (
     i < 0 ||
@@ -37,8 +37,8 @@ function DFSIterateIsland(grid: string[][], i: number, j: number) {
   // grid 값 1 -> -1로 바꾸기 (numOfIslands 카운트 방지)
   grid[i][j] = "-1";
 
-  DFSIterateIsland(grid, i - 1, j); // 위 탐색
-  DFSIterateIsland(grid, i + 1, j); // 아래
-  DFSIterateIsland(grid, i, j - 1); // 왼쪽
-  DFSIterateIsland(grid, i, j + 1); // 아래쪽
+  dfsIslands(grid, i - 1, j); // 위 탐색
+  dfsIslands(grid, i + 1, j); // 아래
+  dfsIslands(grid, i, j - 1); // 왼쪽
+  dfsIslands(grid, i, j + 1); // 아래쪽
 }
